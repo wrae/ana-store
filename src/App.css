@@ -1,0 +1,193 @@
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  /* Default spacing */
+  margin: 10px 0 0;
+  padding: 10px 20px;
+}
+
+/* Header wrapper */
+.header-wrapper {
+  width: 100%;
+  background-color: #203644; /* New header color */
+  position: fixed; /* This ensures the header stays at the top */
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* Top bar with language selector and hamburger menu */
+.header-top {
+  background-color: #1a2a36; /* Slightly darker than #203644 */
+  width: 100%;
+  height: 25px; /* Set height to 25px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 100;
+}
+
+/* Language toggle container to align buttons side by side */
+.language-toggle-container {
+  display: inline-flex; /* Ensure the buttons are inline */
+  align-items: center;
+}
+
+/* Language toggle button */
+.language-toggle {
+  font-size: 14px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+/* Underline the selected language */
+.language-toggle.selected {
+  text-decoration: underline;
+}
+
+/* Separator (|) between the languages */
+.language-toggle-container button:not(:last-child)::after {
+  content: '|';
+  margin: 0 5px;
+  color: white;
+}
+
+
+
+/* Hamburger menu */
+.hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  margin-right: 20px; /* Adjust to pull the hamburger icon back in */
+}
+
+/* Hamburger menu container */
+.hamburger-menu-container {
+  display: none;
+  position: absolute;
+  top: 25px; /* Aligns with the bottom of the top bar */
+  right: 0; /* Aligns it to the right edge */
+  background-color: #5f6a72;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  z-index: 1000;
+}
+
+.hamburger-menu-container.open {
+  display: block;
+}
+
+.hamburger-menu-container ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Each li should have padding to make the whole area clickable */
+.hamburger-menu-container li {
+  padding: 10px; /* Padding restored to previous value */
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Make sure the links fill the whole area of the li */
+.hamburger-menu-container a {
+  display: block; /* Makes the link fill the li */
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Hover effect */
+.hamburger-menu-container li:hover {
+  background-color: #7a8a91;
+}
+
+/* Header image wrapper to ensure it's within the header */
+.header-image-wrapper {
+  width: 100%;
+  text-align: center; /* Centers the header image */
+  margin-top: 0; /* Removes any space above the image */
+}
+
+/* Header image */
+.header-image {
+  width: 20%; /* Reduced by 60% from the original size */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Ensures the image is centered */
+}
+
+
+
+/* Page content */
+.App {
+  padding: 10px 20px;
+  margin-top: 180px; /* Adjust based on actual header height */
+}
+
+/* Footer */
+footer {
+  background-color: #4f5d66;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+}
+
+/* Media query for responsive design */
+/*@media screen and (max-width: 768px) {*/
+/*  .header-image {*/
+/*    width: 70%; !* Increase image size for mobile *!*/
+/*  }*/
+
+/*  .hamburger {*/
+/*    font-size: 24px;*/
+/*  }*/
+
+/*  .header-top {*/
+/*    flex-direction: column;*/
+/*  }*/
+
+/*  .hamburger-menu-container {*/
+/*    width: 100%;*/
+/*  }*/
+/*}*/
+@media screen and (max-width: 768px) {
+  .App {
+    margin-top: 20px; /* Less spacing on mobile */
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-top {
+    height: auto; /* Allow it to expand */
+    flex-direction: column; /* Stack elements */
+    align-items: center;
+    padding: 5px 0;
+  }
+  .App {
+    padding: 10px 20px;
+    margin-top: 140px; /* Adjust based on actual header height */
+  }
+
+  .language-toggle {
+    font-size: 14px; /* Keep it readable */
+    margin-bottom: 5px; /* Space between buttons */
+  }
+
+  .hamburger {
+    font-size: 26px; /* Adjust size */
+    margin: 0; /* Center properly */
+  }
+}
+
